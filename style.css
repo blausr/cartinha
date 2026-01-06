@@ -1,23 +1,21 @@
-/* =========================
-   RESET BÁSICO
-========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* =========================
-   BODY
-========================= */
+
 body {
   background-color: #f0e6f6;
   min-height: 100vh;
 }
 
-/* =========================
-   TÍTULO
-========================= */
+header{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 h1 {
   font-family: "Dancing Script", cursive;
   font-size: 50px;
@@ -27,9 +25,6 @@ h1 {
   margin-top: 20px;
 }
 
-/* =========================
-   ENVELOPE
-========================= */
 #envelope {
   position: relative;
   width: 340px;
@@ -42,7 +37,7 @@ h1 {
   box-shadow: 0 6px 26px rgba(0, 0, 0, 0.25);
 }
 
-/* PARTES DO ENVELOPE */
+
 .front {
   position: absolute;
   width: 0;
@@ -68,10 +63,9 @@ h1 {
   border-bottom-right-radius: 10px;
 }
 
-/* =========================
-   CARTA
-========================= */
+
 .letter {
+  margin-left: 4%;
   position: relative;
   background-color: #fff;
   width: 92%;
@@ -83,7 +77,6 @@ h1 {
   z-index: 1;
 }
 
-/* TEXTO */
 .words {
   position: absolute;
   left: 10%;
@@ -119,9 +112,6 @@ h1 {
   font-size: 1.35rem;
 }
 
-/* =========================
-   ANIMAÇÕES ABRIR / FECHAR
-========================= */
 .open .flap {
   transform: rotateX(180deg);
   transition: transform 0.4s ease, z-index 0.6s;
@@ -146,9 +136,7 @@ h1 {
   z-index: 2;
 }
 
-/* =========================
-   CORAÇÕES
-========================= */
+
 .hearts {
   position: absolute;
   top: 110px;
@@ -213,9 +201,7 @@ h1 {
   animation-fill-mode: forwards;
 }
 
-/* =========================
-   BOTÕES
-========================= */
+
 .reset {
   text-align: center;
   margin-top: 40px;
@@ -240,9 +226,7 @@ h1 {
   color: #fff;
 }
 
-/* =========================
-   FOOTER
-========================= */
+
 footer {
   font-family: "Dancing Script", cursive;
   font-size: 24px;
@@ -257,16 +241,10 @@ footer p {
   border-radius: 6px;
 }
 
-/* =========================
-   WRAPPER
-========================= */
 .envlope-wrapper {
   height: 60vh;
 }
 
-/* =========================
-   KEYFRAMES
-========================= */
 @keyframes slideUp {
   0% {
     top: 0;
@@ -285,9 +263,6 @@ footer p {
   }
 }
 
-/* =========================
-   RESPONSIVO (CELULAR)
-========================= */
 @media (max-width: 600px) {
   h1 {
     font-size: 38px;
@@ -330,86 +305,4 @@ footer p {
   footer {
     font-size: 20px;
   }
-}
-
-
-footer{
-  font-family: "Dancing Script", cursive;
-  font-size: 24px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-p{
-  background-color: #ffe6e6;
-}
-
-@-webkit-keyframes slideUp {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -600px;
-  }
-}
-@keyframes slideUp {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -600px;
-  }
-}
-@-webkit-keyframes sideSway {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: 50px;
-  }
-}
-@keyframes sideSway {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: 50px;
-  }
-}
-body {
-  background-color: #f0e6f6; /* Soft lavender for a romantic, dreamy feel */
-}
-
-.envlope-wrapper {
-  height: 380px;
-}
-
-.reset {
-  text-align: center;
-}
-
-.reset button {
-  font-weight: 800;
-  font-style: normal;
-  transition: all 0.1s linear;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: solid 2px #d9534f;
-  border-radius: 4px;
-  color: #d9534f;
-  display: inline-block;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 5px;
-  padding: 10px;
-  line-height: 1em;
-  text-decoration: none;
-  min-width: 120px;
-  cursor: pointer;
-}
-
-.reset button:hover {
-  background-color: #d9534f;
-  color: #fff;
 }
