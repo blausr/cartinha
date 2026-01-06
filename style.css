@@ -1,17 +1,17 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-
 body {
   background-color: #f0e6f6;
   min-height: 100vh;
 }
 
-header{
+/* ================= HEADER ================= */
+
+header {
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -25,18 +25,31 @@ h1 {
   margin-top: 20px;
 }
 
+/* ================= WRAPPER (ESCALA) ================= */
+
+.envlope-wrapper {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.2); /* +20% */
+  transform-origin: center;
+}
+
+/* ================= ENVELOPE ================= */
+
 #envelope {
   position: relative;
   width: 340px;
   height: 220px;
+  margin: 0 auto;
+  background-color: #d9534f;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin: 0 auto;
-  top: 120px;
-  background-color: #d9534f;
   box-shadow: 0 6px 26px rgba(0, 0, 0, 0.25);
 }
 
+/* ================= FRENTE ================= */
 
 .front {
   position: absolute;
@@ -63,19 +76,23 @@ h1 {
   border-bottom-right-radius: 10px;
 }
 
+/* ================= CARTA ================= */
 
 .letter {
-  margin-left: 4%;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  transform: translateX(-50%);
   background-color: #fff;
   width: 92%;
   height: 92%;
-  top: 4%;
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
   font-family: "Dancing Script", cursive;
   z-index: 1;
 }
+
+/* ================= TEXTO ================= */
 
 .words {
   position: absolute;
@@ -112,6 +129,8 @@ h1 {
   font-size: 1.35rem;
 }
 
+/* ================= ANIMAÇÃO ABRIR / FECHAR ================= */
+
 .open .flap {
   transform: rotateX(180deg);
   transition: transform 0.4s ease, z-index 0.6s;
@@ -125,17 +144,18 @@ h1 {
 }
 
 .close .letter {
-  transform: translateY(0);
+  transform: translate(-50%, 0);
   transition: transform 0.4s ease, z-index 1s;
   z-index: 1;
 }
 
 .open .letter {
-  transform: translateY(-130px);
+  transform: translate(-50%, -130px); /* centralizada */
   transition: transform 0.4s 0.6s ease, z-index 0.6s;
   z-index: 2;
 }
 
+/* ================= CORAÇÕES ================= */
 
 .hearts {
   position: absolute;
@@ -148,7 +168,6 @@ h1 {
 .heart {
   position: absolute;
   bottom: 0;
-  right: 10%;
   pointer-events: none;
 }
 
@@ -201,6 +220,7 @@ h1 {
   animation-fill-mode: forwards;
 }
 
+/* ================= BOTÕES ================= */
 
 .reset {
   text-align: center;
@@ -226,10 +246,11 @@ h1 {
   color: #fff;
 }
 
+/* ================= FOOTER ================= */
 
 footer {
   font-family: "Dancing Script", cursive;
-  font-size: 24px;
+  font-size: 36px;
   display: flex;
   justify-content: center;
   margin-top: 30px;
@@ -241,9 +262,7 @@ footer p {
   border-radius: 6px;
 }
 
-.envlope-wrapper {
-  height: 60vh;
-}
+/* ================= ANIMAÇÕES ================= */
 
 @keyframes slideUp {
   0% {
@@ -263,33 +282,19 @@ footer p {
   }
 }
 
+/* ================= MOBILE ================= */
+
 @media (max-width: 600px) {
   h1 {
     font-size: 38px;
   }
 
-  #envelope {
-    width: 90vw;
-    height: 58vw;
-    top: 60px;
-  }
-
-  .flap {
-    border-left: 45vw solid transparent;
-    border-right: 45vw solid transparent;
-    border-top: 30vw solid #d9534f;
-    border-bottom: 25vw solid transparent;
-  }
-
-  .pocket {
-    border-left: 45vw solid #f5a3a2;
-    border-right: 45vw solid #f5a3a2;
-    border-bottom: 28vw solid #ff6f61;
-    border-top: 28vw solid transparent;
+  .envlope-wrapper {
+    transform: scale(1.1);
   }
 
   .open .letter {
-    transform: translateY(-38vw);
+    transform: translate(-50%, -38vw);
   }
 
   .words.line1 {
